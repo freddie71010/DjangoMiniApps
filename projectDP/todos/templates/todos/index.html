@@ -8,15 +8,20 @@
 </head>
 
 <body>
-	<p>
-	Sort these into your order of preference:
-	</p>
+	<p>Work In Progress</p>
 	<ul id="sortable">
-		<li>Apples</li>
-		<li>Oranges</li>
-		<li>Bananas</li>
-		<li>Strawberries</li>
+		<!-- <li id="item_1">Laundry</li>
+		<li id="item_2">Clean bathroom</li>
+		<li id="item_3">Fix sink</li>
+		<li id="item_4">Recycle batteries</li>
+	 -->
+	{% for todo in todos %}
+	<li id="item_{{todo.task_row_order}}">{{todo.task}}</li>
+	{% endfor %}
+
 	</ul>
+<br>
+<button type="button" id="update_list">Update List Order</button>
 </body>
 
 <footer>
