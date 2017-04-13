@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+
+<head>
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+</head>
+
+<body>
+	<p>
+	Sort these into your order of preference:
+	</p>
+	<ul id="sortable">
+		<li>Apples</li>
+		<li>Oranges</li>
+		<li>Bananas</li>
+		<li>Strawberries</li>
+	</ul>
+</body>
+
+<footer>
+	<script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="{% static 'js/main.js' %}"></script>
+</footer>
+
+</html>
