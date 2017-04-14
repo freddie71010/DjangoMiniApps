@@ -22,3 +22,7 @@ li {
 [draggable] {
 	user-select: none;
 }
+
+ul, menu, dir {
+	-webkit-padding-start: 0px;
+}

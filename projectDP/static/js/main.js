@@ -14,10 +14,13 @@ $(document).ready(function(){
 	$('#update_list').on('click', function(event){
 		event.preventDefault();
 		console.log("clicked 'Update List Order' button!");
-		var sorted = $("#sortable").sortable("toArray");
-		console.log(sorted);
+		var wip = $("#sortable1").sortable("toArray");
+		var future = $("#sortable2").sortable("toArray");
+		console.log("wip:",wip);
+		console.log("future:",future);
 		kwargs = {
-			"sorted": sorted,
+			"wip": wip,
+			"future": future,
 			"csrfmiddlewaretoken": $('input[name="csrfmiddlewaretoken"]').val(),
 		}
 	
