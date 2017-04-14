@@ -9,17 +9,18 @@
 
 <body>
 	<p>Work In Progress</p>
-	<ul id="sortable">
-		<!-- <li id="item_1">Laundry</li>
-		<li id="item_2">Clean bathroom</li>
-		<li id="item_3">Fix sink</li>
-		<li id="item_4">Recycle batteries</li>
-	 -->
-	{% for todo in todos %}
-	<li id="item_{{todo.task_row_order}}">{{todo.task}}</li>
-	{% endfor %}
+	<form method="POST" action="/"> {% csrf_token %}
+		<ul id="sortable1" class="connectedSortable">
+			{% for todo in todos %}
+			<li id="item_{{todo.task_row_order}}">{{todo.task}}</li>
+			{% endfor %}
+		</ul>
+		<p>Completed</p>
+		<ul id="sortable2" class="connectedSortable">
+			<li>Apple</li>
+		</ul>
 
-	</ul>
+	</form>
 <br>
 <button type="button" id="update_list">Update List Order</button>
 </body>
