@@ -8,21 +8,28 @@
 </head>
 
 <body>
-	<p>Work In Progress</p>
 	<form method="POST" action="/"> {% csrf_token %}
+	<p>Work In Progress</p>
 		<ul id="sortable1" class="connectedSortable">
-			{% for todo in todos %}
+		{% for todo in todos %}
+			{% if todo.section == 'wip' %}
 			<li id="item_{{todo.task_row_order}}">{{todo.task}}</li>
-			{% endfor %}
+			{% endif %}
+		{% endfor %}
 		</ul>
-		<p>Completed</p>
+
+	<p>Future</p>
 		<ul id="sortable2" class="connectedSortable">
-			<li>Apple</li>
+		{% for todo in todos %}
+			{% if todo.section == 'future' %}
+			<li id="item_{{todo.task_row_order}}">{{todo.task}}</li>
+			{% endif %}
+		{% endfor %}
 		</ul>
 
 	</form>
 <br>
-<button type="button" id="update_list">Update List Order</button>
+<p><button type="button" id="update_list">Update List Order</button></p>
 </body>
 
 <footer>
